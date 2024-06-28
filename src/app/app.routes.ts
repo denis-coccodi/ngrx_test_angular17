@@ -6,4 +6,8 @@ export const appRoutes: Routes = [
     path: 'table',
     loadChildren: () => import('./table/table.routes').then(m => m.routes),
   },
+  {
+    path: 'grid-list',
+    loadChildren: () => import('./grid-list/grid-list.routes').then(m => m.routes),
+  },
 ];

@@ -1,7 +1,21 @@
-table {
-  width: 100%;
-}
-
-th.mat-sort-header-sorted {
-  color: black;
+.table-container {
+  width: 500px;
+  display: inline-block;
+  
+  table {
+    width: 100%;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+  
+  .buttons-row {
+    margin-top: 16px;
+    width: 100%;
+    .mat-orange {
+      background-color: #F2881E;
+      color: #FFF;
+    }
+  }
 }

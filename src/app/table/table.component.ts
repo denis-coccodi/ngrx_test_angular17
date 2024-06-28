@@ -6,6 +6,7 @@ import {
   ViewChild,
   effect,
 } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSort, MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { Store } from '@ngrx/store';
@@ -19,7 +20,7 @@ import { PeriodicElement } from './state/table.state';
 @Component({
   selector: 'app-table',
   standalone: true,
-  imports: [MatTableModule, MatSortModule],
+  imports: [MatTableModule, MatSortModule, MatButtonModule],
   providers: [],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
@@ -48,20 +49,15 @@ export class TableComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  removeElement = () => {
-    const chosenElement = this.dataSource?.data[0];
+  removeElement = (index = 0) => {
+    const chosenElement = this.dataSource?.data[index];
     const chosenId = chosenElement && { elementId: chosenElement?.id };
     if (chosenId) {
       this.store.dispatch(tableManagementActions.removeElement(chosenId));
     }
   };
 
-  /** Announce the change in sort state for assistive technology. */
   announceSortChange(sortState: Sort) {
-    // This example uses English messages. If your application supports
-    // multiple language, you would internationalize these strings.
-    // Furthermore, you can customize the message to add additional
-    // details about the values being sorted.
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     } else {

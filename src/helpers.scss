@@ -1,0 +1,16 @@
+$ems: 0, 1, 2, 3, 4, 5, 6, 7;
+$directions: '', '-bottom', '-top', '-left', '-right';
+
+@each $em in $ems {
+  @each $dir in $directions {
+    $dir-in-rule: str-slice($dir, 2, 2);
+    
+    .m#{$dir-in-rule}-#{$em} {
+      margin#{$dir}: $em + em;
+    }
+
+    .p#{$dir-in-rule}-#{$em} {
+      padding#{$dir}: $em + em;
+    }
+  }
+}

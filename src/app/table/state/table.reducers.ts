@@ -3,7 +3,7 @@ import { createReducer, on } from '@ngrx/store';
 import { tableLoadActions, tableManagementActions } from './table.actions';
 import { PeriodicElement, TableState } from './table.state';
 
-const elementsSortFunction = (
+const sortBySymbol = (
   a: PeriodicElement,
   b: PeriodicElement
 ): number => {
@@ -13,7 +13,7 @@ const elementsSortFunction = (
 export const tableAdapter: EntityAdapter<PeriodicElement> =
   createEntityAdapter<PeriodicElement>({
     selectId: (element: PeriodicElement) => element?.id,
-    sortComparer: elementsSortFunction,
+    sortComparer: sortBySymbol,
   });
 
 export const initialTableState: TableState = tableAdapter.getInitialState({

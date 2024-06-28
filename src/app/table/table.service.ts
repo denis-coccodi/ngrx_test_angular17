@@ -8,5 +8,5 @@ import { ELEMENT_DATA } from './table.data';
 export class TableService {
   constructor() {}
 
-  loadTableData = () => of(ELEMENT_DATA).pipe(delay(2000));
+  loadTableData = () => of(ELEMENT_DATA).pipe(delay(500));
 }

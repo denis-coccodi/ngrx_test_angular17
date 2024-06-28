@@ -1,1 +1,39 @@
-<router-outlet></router-outlet>
+<main class="outer-container">
+  <div class="page-container">
+    <header>
+      <mat-toolbar class="toolbar" color="accent">
+        <button
+          (click)="sidenav.toggle()"
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>NgRX Test</span>
+        <span class="spacer"></span>
+      </mat-toolbar>
+    </header>
+    <div class="content">
+      <mat-sidenav-container class="sidenav-container">
+        <mat-sidenav
+          #sidenav
+          class="panel"
+          mode="over"
+          [opened]="isPanelOpen()"
+          (opened)="isPanelOpen.set(true)"
+          (closed)="isPanelOpen.set(false)"
+        >
+          <a class="link" (click)="navigateTo(['/table'])">Table</a>
+          <a class="link" (click)="navigateTo(['/grid-list'])">Grid List</a>
+        </mat-sidenav>
+
+        <mat-sidenav-content class="sidenav-content">
+          <section class="main-section">
+            <router-outlet></router-outlet>
+          </section>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </div>
+  </div>
+</main>

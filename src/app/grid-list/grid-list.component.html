@@ -1,0 +1,11 @@
+<section class="grid-list-container pt-2">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    {{ gridListData() | json }}
+    @for (gridListItem of gridListData(); track $index) {
+      <mat-grid-tile>
+        <img [src]="gridListItem.url">
+        {{ gridListItem.id }}
+      </mat-grid-tile>
+    }
+  </mat-grid-list>
+</section>
