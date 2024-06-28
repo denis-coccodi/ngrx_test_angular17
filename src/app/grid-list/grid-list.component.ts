@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
   Component,
   OnInit
@@ -12,7 +11,7 @@ import { selectGridImages } from './state/grid-list.selectors';
 @Component({
   selector: 'app-grid-list',
   standalone: true,
-  imports: [MatGridListModule, MatButtonModule, CommonModule],
+  imports: [MatGridListModule, MatButtonModule],
   providers: [],
   templateUrl: './grid-list.component.html',
   styleUrl: './grid-list.component.scss',

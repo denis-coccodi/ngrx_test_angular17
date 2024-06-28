@@ -1,2 +1,7 @@
 .grid-list-container {
+  width: 100vw;
+  padding: 32px;
+  .grid-list {
+    width: calc(100% - 64px);
+  }
 }
