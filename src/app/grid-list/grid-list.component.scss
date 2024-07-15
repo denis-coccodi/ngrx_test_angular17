@@ -1,7 +1,9 @@
 .grid-list-container {
   width: 100vw;
-  padding: 32px;
+  padding: 32px;    
+  display: flex;
+  justify-content: center;
   .grid-list {
-    width: calc(100% - 64px);
+    width: 900px;
   }
 }
