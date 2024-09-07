@@ -1,0 +1,8 @@
+services:
+  angular17_fe:
+    container_name: 'angular17_fe'
+    build: 
+      context: ./
+      dockerfile: Dockerfile.prod
+    ports:
+      - 3000:80
